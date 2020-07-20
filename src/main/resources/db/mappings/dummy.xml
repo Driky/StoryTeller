@@ -8,7 +8,7 @@
                  version="2.1">
     <package>com.example.demo.domain</package>
 
-    <entity class="com.example.demo.domain.Dummy">
+    <entity class="com.cedricchatelain.storyteller.domain.Dummy">
         <table name="dummy"/>
 
         <attributes>

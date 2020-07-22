@@ -15,6 +15,11 @@ buildscript {
     }
 }
 
+plugins {
+    id "io.freefair.lombok" version "5.1.0"
+}
+
+// TODO: convert to the new plugin DSL
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'

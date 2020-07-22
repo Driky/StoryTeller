@@ -1,12 +1,12 @@
 package com.cedricchatelain.storyteller.domain.entities;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Builder;
 
+@Getter @Builder @AllArgsConstructor
 public class Markup {
-    // private AnchorType anchorType;
-    //Fixit: make it a class for link/url
-    private String href;
-    private String rel;
-    private String title;
-    private int end;
-    private int start;
-    private MarkupType type;
+    final private String title;
+    final private int end;
+    final private int start;
+    final private MarkupType type;
 }

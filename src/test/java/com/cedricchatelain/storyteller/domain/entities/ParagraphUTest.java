@@ -22,5 +22,14 @@ public class ParagraphUTest {
             assertThat(throwable).isInstanceOf(java.lang.NullPointerException.class)
                     .hasMessage("name is marked non-null but is null");
         }
+
+        @Test
+        void succes_when_name_is_not_null() {
+            String name = "random_name";
+
+            Paragraph para = Paragraph.builder().name(name).build();
+
+            assertThat(para).isInstanceOf(Paragraph.class).hasFieldOrPropertyWithValue("name", name);
+        }
     }
 }

@@ -1,12 +1,13 @@
 package com.cedricchatelain.storyteller.domain.entities;
 
+import lombok.Builder;
+import lombok.NonNull;
+
+@Builder
 public class Paragraph {
-    private LayoutType layout;
+    @NonNull
     private String name;
-    // can be text of parag or caption of image
-    private String text;
-    private ParagraphType type;
-    private Markup[] markups;
-    private Metadata metadata;
-    private Boolean hasDropCap;
+//    @NonNull
+//    private ParagraphType type;
+//    private String text;
 }

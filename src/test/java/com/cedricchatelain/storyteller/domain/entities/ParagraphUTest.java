@@ -35,13 +35,26 @@ public class ParagraphUTest {
         }
 
         @Test
-        void succes_when_type_is_not_null() {
+        void succes_when_name_and_type_are_not_null() {
             ParagraphType type = ParagraphType.TEXT;
             String name = "random_name";
 
             Paragraph para = Paragraph.builder().name(name).type(type).build();
 
             assertThat(para).isInstanceOf(Paragraph.class).hasFieldOrPropertyWithValue("name", name).hasFieldOrPropertyWithValue("type", type);
+        }
+
+        @Test
+        void succes_whith_some_text() {
+            ParagraphType type = ParagraphType.TEXT;
+            String name = "random_name";
+            String text = "some text";
+
+            Paragraph para = Paragraph.builder().name(name).type(type).text(text).build();
+
+            assertThat(para).isInstanceOf(Paragraph.class).hasFieldOrPropertyWithValue("name", name)
+                    .hasFieldOrPropertyWithValue("type", type)
+                    .hasFieldOrPropertyWithValue("text", text);
         }
     }
 }

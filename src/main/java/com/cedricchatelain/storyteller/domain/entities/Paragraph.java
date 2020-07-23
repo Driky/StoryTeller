@@ -9,5 +9,5 @@ public class Paragraph {
     private String name;
     @NonNull
     private ParagraphType type;
-//    private String text;
+    private String text;
 }

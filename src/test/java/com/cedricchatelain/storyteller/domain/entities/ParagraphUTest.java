@@ -31,5 +31,26 @@ public class ParagraphUTest {
 
             assertThat(para).isInstanceOf(Paragraph.class).hasFieldOrPropertyWithValue("name", name);
         }
+
+        @Test
+        void fail_when_type_is_null() {
+            String type = null;
+            String name = "random_name";
+
+            Throwable throwable = catchThrowable(() -> Paragraph.builder().name(name).type(type).build());
+
+            assertThat(throwable).isInstanceOf(java.lang.NullPointerException.class)
+                    .hasMessage("type is marked non-null but is null");
+        }
+
+        @Test
+        void succes_when_type_is_not_null() {
+            String type = ParagraphType.TEXT;
+            String name = "random_name";
+
+            Paragraph para = Paragraph.builder().name(name).type(type).build();
+
+            assertThat(para).isInstanceOf(Paragraph.class).hasFieldOrPropertyWithValue("name", name).hasFieldOrPropertyWithValue("type", type);
+        }
     }
 }

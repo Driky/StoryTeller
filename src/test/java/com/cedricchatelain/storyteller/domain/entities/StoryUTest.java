@@ -26,10 +26,22 @@ public class StoryUTest {
         }
 
         @Test
-        void success_when_given_required_args() {
+        void fail_when_id_is_null() {
+            String id = null;
             Boolean isPublished = false;
 
-            Story story = Story.builder().isPublished(isPublished).build();
+            Throwable throwable = catchThrowable(() -> Story.builder().isPublished(isPublished).id(id).build());
+
+            assertThat(throwable).isInstanceOf(java.lang.NullPointerException.class)
+                    .hasMessage("id is marked non-null but is null");
+        }
+
+        @Test
+        void success_when_given_required_args() {
+            Boolean isPublished = false;
+            String id = "some_id";
+
+            Story story = Story.builder().id(id).isPublished(isPublished).build();
 
             assertThat(story).isInstanceOf(Story.class);
         }

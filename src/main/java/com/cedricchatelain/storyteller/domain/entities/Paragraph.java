@@ -7,7 +7,7 @@ import lombok.NonNull;
 public class Paragraph {
     @NonNull
     private String name;
-//    @NonNull
-//    private ParagraphType type;
+    @NonNull
+    private ParagraphType type;
 //    private String text;
 }
